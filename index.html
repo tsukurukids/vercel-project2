@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Vercel Project</title>
-</head>
-<body>
-    <h1>Hello Vercel!</h1>
-    <p>This is a simple HTML file.</p>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>学習進捗リダイレクト</title>
+  </head>
+  <body>
+    <h1>お子様の名前を入力してください</h1>
+    <form action="/api/check-progress" method="POST">
+      <label for="name">お子様の名前:</label>
+      <input type="text" id="name" name="name" required>
+      <button type="submit">検索</button>
+    </form>
+  </body>
 </html>
