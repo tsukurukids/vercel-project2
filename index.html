@@ -4,35 +4,108 @@
     <meta charset="UTF-8">
     <title>学習進捗リダイレクト</title>
     <style>
-      /* 強調するためのスタイル */
-      .important {
-        font-weight: bold;
-        color: red;
+      /* ページ全体の中央寄せ */
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f4f4f4;
+        margin: 0;
       }
+
+      /* コンテンツのスタイル */
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      /* タイトルと説明文 */
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #666;
+        font-size: 16px;
+      }
+
+      /* フォーム */
+      form {
+        margin: 20px 0;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: 250px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      /* 正しい例と間違った例 */
       .example {
         font-weight: bold;
         color: green;
       }
+
+      .important {
+        font-weight: bold;
+        color: red;
+      }
+
+      /* リストのスタイル */
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      li {
+        margin: 5px 0;
+      }
     </style>
   </head>
   <body>
-    <h1>お子様の名前を入力してください</h1>
-    <p>名前は<strong class="important">「ひらがな」で、名字と名前の間にスペースを含まないフルネーム</strong>を入力してください。</p>
-    
-    <form action="/api/check-progress" method="GET">
-      <label for="name">お子様の名前:</label>
-      <input type="text" id="name" name="name" required>
-      <button type="submit">検索</button>
-    </form>
+    <div class="container">
+      <h1>お子様の名前を入力してください</h1>
+      <p>名前は<strong class="important">「ひらがな」で、名字と名前の間にスペースを含まないフルネーム</strong>を入力してください。</p>
+      
+      <form action="/api/check-progress" method="POST">
+        <label for="name">お子様の名前:</label>
+        <input type="text" id="name" name="name" required>
+        <button type="submit">検索</button>
+      </form>
 
-    <h2>正しい入力例</h2>
-    <p><span class="example">つくるたろう</span></p>
+      <h2>正しい入力例</h2>
+      <p><span class="example">つくるたろう</span></p>
 
-    <h2>誤った入力例</h2>
-    <ul>
-      <li><span class="important">つくる たろう</span> （スペースを含んでいる）</li>
-      <li><span class="important">ツクルタロウ</span> （ひらがなではない）</li>
-      <li><span class="important">たろう</span> （名字が含まれていない）</li>
-    </ul>
+      <h2>誤った入力例</h2>
+      <ul>
+        <li><span class="important">つくる たろう</span> （スペースを含んでいる）</li>
+        <li><span class="important">ツクルタロウ</span> （ひらがなではない）</li>
+        <li><span class="important">たろう</span> （名字が含まれていない）</li>
+      </ul>
+    </div>
   </body>
 </html>
