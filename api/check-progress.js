@@ -1,13 +1,17 @@
+import { parse } from 'querystring';
+
 export default function handler(req, res) {
-    // POSTリクエストのボディをパースする
     let body = '';
 
+    // データをチャンクとして受信
     req.on('data', chunk => {
-        body += chunk.toString(); // POSTデータを文字列に変換
+        body += chunk.toString();  // データを文字列に変換して蓄積
     });
 
     req.on('end', () => {
-        const { name } = JSON.parse(body);  // POSTデータをJSONとして解析
+        // URLエンコードされたデータをパース
+        const parsedBody = parse(body);
+        const name = parsedBody.name;
 
         // ひらがなの正規表現
         const hiraganaRegex = /^[\u3040-\u309F]+$/;
@@ -20,6 +24,7 @@ export default function handler(req, res) {
             } else if (name === "きんじょうきゆ") {
                 res.redirect(307, process.env.tsukuru_k_kiyu_URL);
             } else {
+                // 名前が見つからなかった場合
                 res.status(404).send(`
                     <!DOCTYPE html>
                     <html lang="ja">
@@ -63,6 +68,7 @@ export default function handler(req, res) {
                 `);
             }
         } else {
+            // 名前がひらがなでない、またはスペースを含んでいる場合のエラーメッセージ
             res.status(400).send(`
                 <!DOCTYPE html>
                 <html lang="ja">
