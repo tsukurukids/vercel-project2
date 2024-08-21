@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-  const { name } = req.body;
+  const { name } = req.query;  // GETリクエストはreq.queryを使用
 
   // ひらがなの正規表現
   const hiraganaRegex = /^[\u3040-\u309F]+$/;
@@ -8,7 +8,6 @@ export default function handler(req, res) {
     // 名前が全てひらがなであり、かつスペースがない場合
     if (hiraganaRegex.test(name) && !/\s/.test(name)) {
       if (name === "はやさきはると") {
-        // 環境変数が正しいURLを持っているかチェック
         if (process.env.tsukuru_h_haruto_URL) {
           res.redirect(307, process.env.tsukuru_h_haruto_URL);
         } else {
