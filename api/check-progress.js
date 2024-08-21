@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-    const { name } = req.query;
+    const { name } = req.body;  // POSTデータを取得
 
     // ひらがなの正規表現
     const hiraganaRegex = /^[\u3040-\u309F]+$/;
