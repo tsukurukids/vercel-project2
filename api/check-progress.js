@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-    const { name } = req.body;  // POSTデータを取得
+    const { name } = req.body;  // POSTのデータを取得
 
     // ひらがなの正規表現
     const hiraganaRegex = /^[\u3040-\u309F]+$/;
@@ -8,11 +8,10 @@ export default function handler(req, res) {
     if (hiraganaRegex.test(name) && !/\s/.test(name)) {
         // 名前ごとのリダイレクト
         if (name === "はやさきはると") {
-            res.redirect(process.env.tsukuru_h_haruto_URL);
+            res.redirect(307, process.env.tsukuru_h_haruto_URL);
         } else if (name === "きんじょうきゆ") {
-            res.redirect(process.env.tsukuru_k_kiyu_URL);
+            res.redirect(307, process.env.tsukuru_k_kiyu_URL);
         } else {
-            // 名前が見つからなかった場合のエラーメッセージ
             res.status(404).send(`
                 <!DOCTYPE html>
                 <html lang="ja">
@@ -56,7 +55,6 @@ export default function handler(req, res) {
             `);
         }
     } else {
-        // 名前がひらがなでない、またはスペースを含んでいる場合のエラーメッセージ
         res.status(400).send(`
             <!DOCTYPE html>
             <html lang="ja">
