@@ -12,7 +12,7 @@ export default function handler(req, res) {
         } else if (name === "きんじょうきゆ") {
             res.redirect(307, process.env.tsukuru_k_kiyu_URL);
         } else if (name === "きんじょうともき") {
-            res.redirect(307, process.env.tsukuru_k_kiyu_URL);
+            res.redirect(307, process.env.tsukuru_k_tomoki_URL);
         } else {
             // 名前が見つからなかった場合のエラーメッセージ
             res.status(404).send(`
