@@ -67,10 +67,10 @@ export default function handler(req, res) {
             res.redirect(307, process.env.tsukuru_u_yuiri_URL);
         } else if (name === "なかおしんのすけ") {
             res.redirect(307, process.env.tsukuru_n_shinnosuke_URL);
-        } else if (name === "なかおしんのすけ") {
-            res.redirect(307, process.env.tsukuru_n_shinnosuke_URL);    
-        } else if (name === "なかおしんのすけ") {
-            res.redirect(307, process.env.tsukuru_n_shinnosuke_URL);    
+        } else if (name === "") {
+            res.redirect(307, process.env.);    
+        } else if (name === "") {
+            res.redirect(307, process.env.);    
         } else {
             // 名前が見つからなかった場合のエラーメッセージ
             res.status(404).send(`
