@@ -55,6 +55,10 @@ export default function handler(req, res) {
             res.redirect(307, process.env.tsukuru_o_sosuke_URL);
         } else if (name === "まつだあすみ") {
             res.redirect(307, process.env.tsukuru_a_matuda_URL);
+        } else if (name === "ながみねしょうむ") {
+            res.redirect(307, process.env.tsukuru_n_shomu_URL);
+        } else if (name === "ころくよしふみ") {
+            res.redirect(307, process.env.tsukuru_k_yoshihumi_URL);    
             
         } else {
             // 名前が見つからなかった場合のエラーメッセージ
