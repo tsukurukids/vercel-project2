@@ -67,8 +67,8 @@ export default function handler(req, res) {
             res.redirect(307, process.env.tsukuru_u_yuiri_URL);
         } else if (name === "なかおしんのすけ") {
             res.redirect(307, process.env.tsukuru_n_shinnosuke_URL);
-        } else if (name === "") {
-            res.redirect(307, process.env.);    
+        } else if (name === "ちねんよしあ") {
+            res.redirect(307, process.env.tsukuru_t_yosia_URL);    
         } else if (name === "") {
             res.redirect(307, process.env.);    
         } else {
