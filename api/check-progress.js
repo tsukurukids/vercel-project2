@@ -70,7 +70,9 @@ export default function handler(req, res) {
         } else if (name === "ちねんよしあ") {
             res.redirect(307, process.env.tsukuru_t_yosia_URL);    
         } else if (name === "やましろあらた") {
-            res.redirect(307, process.env.tsukuru_y_arata_URL);    
+            res.redirect(307, process.env.tsukuru_y_arata_URL);
+        } else if (name === "そのだひかり") {
+            res.redirect(307, process.env.tsukuru_s_hikari_URL);    
         } else {
             // 名前が見つからなかった場合のエラーメッセージ
             res.status(404).send(`
