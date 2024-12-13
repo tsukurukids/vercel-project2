@@ -88,6 +88,8 @@ export default function handler(req, res) {
         } else if (name === "なかむらひなた") {
             res.redirect(307, process.env.tsukuru_n_hinata_URL);
         } else if (name === "なかむらいつき") {
+            res.redirect(307, process.env.tsukuru_n_iituki_URL);
+        } else if (name === "まつだしえい") {
             res.redirect(307, process.env.tsukuru_n_iituki_URL);    
         } else {
             // 名前が見つからなかった場合のエラーメッセージ
