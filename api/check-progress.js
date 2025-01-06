@@ -166,7 +166,9 @@ export default function handler(req, res) {
         } else if (name === "ひがよしなり") {
             res.redirect(307, process.env.tsukuru_h_yoshinari_URL);
         } else if (name === "じょじょう") {
-            res.redirect(307, process.env.tsukuru_j_jo_URL);    
+            res.redirect(307, process.env.tsukuru_j_jo_URL);
+        } else if (name === "うねりょうま") {
+            res.redirect(307, process.env.tsukuru_u_ryoma_URL);    
         } else {
             // 名前が見つからなかった場合のエラーメッセージ
             res.status(404).send(`
