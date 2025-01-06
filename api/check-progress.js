@@ -140,7 +140,9 @@ export default function handler(req, res) {
         } else if (name === "いしはらせな") {
             res.redirect(307, process.env.tsukuru_i_sena_URL);
         } else if (name === "たなはらけんご") {
-            res.redirect(307, process.env.tsukuru_t_kengo_URL);    
+            res.redirect(307, process.env.tsukuru_t_kengo_URL);
+        } else if (name === "またよしぜんと") {
+            res.redirect(307, process.env.tsukuru_m_zento_URL);    
         } else {
             // 名前が見つからなかった場合のエラーメッセージ
             res.status(404).send(`
