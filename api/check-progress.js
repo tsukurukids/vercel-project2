@@ -214,7 +214,9 @@ export default function handler(req, res) {
         } else if (name === "またよしこうき") {
             res.redirect(307, process.env.tsukuru_m_kouki_URL);
         } else if (name === "ふくちゆうすけ") {
-            res.redirect(307, process.env.tsukuru_f_yusuke_URL);    
+            res.redirect(307, process.env.tsukuru_f_yusuke_URL);
+        } else if (name === "にしだほたか") {
+            res.redirect(307, process.env.tsukuru_n_hotaka_URL);    
         } else {
             // 名前が見つからなかった場合のエラーメッセージ
             res.status(404).send(`
